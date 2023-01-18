@@ -1,0 +1,242 @@
+#grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 80%;
+  padding: 0;
+  margin: 0 auto;
+  grid-template-areas: "form img";
+  box-shadow: 0px 0px 26px 5px rgba(210, 210, 210, 0.88);
+  border: 1px solid #ddd;
+}
+
+.formImg {
+  grid-area: img;
+  background-image: url("../../componentes-img/sneaker/mas/form.png");
+  height: 100%;
+  width: 100%;
+  align-self: center;
+  background-size: cover;
+}
+
+form {
+  grid-area: form;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: end;
+  padding: 20px 0;
+}
+
+.botonEnviarForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+form .input {
+  align-self: flex-end;
+  padding: 5px 0;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form .input label {
+  margin-left: 10px;
+  font-weight: bolder;
+}
+
+form .input input,
+select {
+  /* height: 25px; */
+  margin: 10px 0;
+  border: 1px solid rgba(184, 184, 184, 0.651);
+  border-radius: 20px;
+  padding: 10px 0px 10px 10px;
+  font-size: 16px;
+}
+
+.inputDoble {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas: "card code";
+}
+
+.card-number {
+  grid-area: card;
+}
+
+.card-number input {
+  width: 90%;
+}
+
+.card-code {
+  grid-area: code;
+}
+
+.card-code input {
+  width: 100%;
+}
+
+.mensajeCompraRealizada {
+  box-shadow: 2px 8px 20px #ddd;
+  transition: 0.5s linear;
+  width: 900px;
+  margin: 80px auto;
+  padding: 50px;
+}
+
+.mensajeCompraRealizada h3 {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.mensajeCompraRealizada div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mensajeCompraRealizada div div {
+  margin: 10px;
+}
+
+.alert {
+  position: fixed;
+  width: 25%;
+  text-align: center;
+  top: 20%;
+  left: 40%;
+  z-index: 5;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+.fadeIn {
+  opacity: 1;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+}
+
+.fadeOut2 {
+  opacity: 1;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+.fadeIn2 {
+  opacity: 0;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+}
+
+.cuotaContenedor {
+  display: flex;
+  align-self: flex-end;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 80%;
+  margin: 0 20px 0 40px;
+  justify-content: center;
+}
+
+.input .cuotas {
+  width: 30%;
+  height: 45px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+@media only screen and (max-width: 913px) {
+  #grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "form"
+      "enviar"
+      "error";
+  }
+
+  form {
+    justify-self: center;
+  }
+
+  .msjError {
+    justify-self: center;
+  }
+
+  .formImg {
+    display: none;
+  }
+
+  form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  form .input {
+    align-self: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .mensajeCompraRealizada {
+    width: 450px;
+  }
+
+  .mensajeCompraRealizada h3 {
+    font-size: 18px;
+  }
+
+  .alert {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .inputDoble {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "card" "code";
+  }
+
+  form .input input {
+    display: block;
+  }
+
+  .card-number input {
+    width: 100%;
+  }
+
+  .mensajeCompraRealizada {
+    width: 300px;
+  }
+
+  .input .cuotas {
+    width: 70%;
+    /* height: 45px; */
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #grid {
+    width: 95%;
+  }
+
+  form .input {
+    margin: 0;
+    padding: 10px 0;
+  }
+}
